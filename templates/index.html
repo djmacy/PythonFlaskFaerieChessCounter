@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Faerie Chess Counter</title>
+</head>
+<body>
+    <h1>Faerie Chess Counter</h1>
+    <form action="/calculate" method="POST">
+        <h3>Rank I selection:</h3>
+        <label for="pawn">Pawns:</label>
+        <input type="number" name="pawn" id="pawn" value="0" min="0">
+        <label for="peasant">Peasants:</label>
+        <input type="number" name="peasant" id="peasant" value="0" min="0">
+        <label for="soldier">Soldiers:</label>
+        <input type="number" name="soldier" id="soldier" value="0" min="0">
+
+        <h3>Rank II selection:</h3>
+        <label for="rook">Rooks:</label>
+        <input type="number" name="rook" id="rook" value="0" min="0">
+        <label for="knight">Knights:</label>
+        <input type="number" name="knight" id="knight" value="0" min="0">
+        <label for="bishop">Bishops:</label>
+        <input type="number" name="bishop" id="bishop" value="0" min="0">
+        <label for="catapult">Catapults:</label>
+        <input type="number" name="catapult" id="catapult" value="0" min="0">
+        <label for="chamberlain">Chamberlain:</label>
+        <input type="number" name="chamberlain" id="chamberlain" value="0" min="0">
+        <label for="courtesan">Courtesan:</label>
+        <input type="number" name="courtesan" id="courtesan" value="0" min="0">
+        <label for="herald">Herald:</label>
+        <input type="number" name="herald" id="herald" value="0" min="0">
+        <label for="inquisitor">Inquisitor:</label>
+        <input type="number" name="inquisitor" id="inquisitor" value="0" min="0">
+        <label for="lancer">Lancer:</label>
+        <input type="number" name="lancer" id="lancer" value="0" min="0">
+        <label for="pontiff">Pontiff:</label>
+        <input type="number" name="pontiff" id="pontiff" value="0" min="0">
+        <label for="thief">Thief:</label>
+        <input type="number" name="thief" id="thief" value="0" min="0">
+        <label for="tower">Tower:</label>
+        <input type="number" name="tower" id="tower" value="0" min="0">
+
+        <h3>Rank III selection:</h3>
+        <label for="queen">Queen:</label>
+        <input type="number" name="queen" id="queen" value="0" min="0">
+        <label for="king">King:</label>
+        <input type="number" name="king" id="king" value="0" min="0">
+        <label for="jester">Jester:</label>
+        <input type="number" name="jester" id="jester" value="0" min="0">
+        <label for="regent">Regent:</label>
+        <input type="number" name="regent" id="regent" value="0" min="0">
+
+        <h3>Difficulty:</h3>
+        <select name="difficulty">
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+        </select>
+
+        <br><br>
+
+        <input type="submit" value="Calculate Points">
+    </form>
+</body>
+</html>
