@@ -174,8 +174,40 @@
                 var kingValue = parseInt(document.getElementById('king').value);
                 var regentValue = parseInt(document.getElementById('regent').value);
 
+                var difficulty = document.getElementById('difficulty').value;
+                var difficulties = {
+                    "Beginner": 65,
+                    "Intermediate": 70,
+                    "Advanced": 75
+                };
 
-            }
+                var totalPoints = pawnValue * 1 +
+                    peasantValue * 2 +
+                    soldierValue * 3 +
+                    rookValue * 9 +
+                    knightValue * 4 +
+                    bishopValue * 6 +
+                    catapultValue * 3 +
+                    chamberlainValue * 6 +
+                    courtesanValue * 6 +
+                    heraldValue * 6 +
+                    inquisitorValue * 8 +
+                    lancerValue * 5 +
+                    pontiffValue * 8 +
+                    thiefValue * 5 +
+                    towerValue * 10 +
+                    queenValue * 12 +
+                    kingValue * 0 +
+                    jesterValue * 12 +
+                    regentValue * 15;
+
+                var remainingPoints = difficulties[difficulty] - totalPoints;
+
+                var scoreContainer = document.getElementById('scoreContainer');
+                scoreContainer.innerHTML = "Total points: " + totalPoints + "<br>Remaining points: " + remainingPoints;
+
+
+            });
             
         </script>
 
