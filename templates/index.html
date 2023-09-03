@@ -22,12 +22,10 @@
 </head>
 <body>
     <h1>Faerie Chess Counter</h1>
-    <form action="/calculate" method="POST">
         <div class="column">
             <h3>Rank I selection:</h3>
             <label>Pawns:</label>
-            <select name="pawn">
-                <option value=0>0</option>
+            <select id="pawn">
                 <option value=4>4</option>
                 <option value=5>5</option>
                 <option value=6>6</option>
@@ -35,13 +33,13 @@
                 <option value=8>8</option>
             </select><br>
             <label>Peasants:</label>
-            <select name="peasant">
+            <select id="peasant">
                 <option value=0>0</option>
                 <option value=1>1</option>
                 <option value=2>2</option>
             </select><br>
             <label>Soldiers:</label>
-            <select name="soldier">
+            <select id="soldier">
                 <option value=0>0</option>
                 <option value=1>1</option>
                 <option value=2>2</option>
@@ -51,65 +49,65 @@
         <div class="column">
             <h3>Rank II selection:</h3>
             <label>Rooks:</label>
-            <select name="rook">
+            <select id="rook">
                 <option value=0>0</option>
                 <option value=1>1</option>
                 <option value=2>2</option>
             </select><br>
             <label>Knights:</label>
-            <select name="knight">
+            <select id="knight">
                 <option value=0>0</option>
                 <option value=1>1</option>
                 <option value=2>2</option>
             </select><br>
             <label>Bishops:</label>
-            <select name="bishop">
+            <select id="bishop">
                 <option value=0>0</option>
                 <option value=1>1</option>
                 <option value=2>2</option>
             </select><br>
             <label>Catapult:</label>
-            <select name="catapult">
+            <select id="catapult">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
             <label>Chamberlain:</label>
-            <select name="chamberlain">
+            <select id="chamberlain">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
             <label>Courtesan:</label>
-            <select name="courtesan">
+            <select id="courtesan">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
             <label>Herald:</label>
-            <select name="herald">
+            <select id="herald">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
             <label>Inquisitor:</label>
-            <select name="inquisitor">
+            <select id="inquisitor">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
             <label>Lancer:</label>
-            <select name="lancer">
+            <select id="lancer">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
             <label>Pontiff:</label>
-            <select name="pontiff">
+            <select id="pontiff">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
             <label>Thief:</label>
-            <select name="thief">
+            <select id="thief">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
             <label>Tower:</label>
-            <select name="tower">
+            <select id="tower">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
@@ -118,22 +116,22 @@
         <div class="column">
             <h3>Rank III selection:</h3>
             <label>Queen:</label>
-            <select name="queen">
+            <select id="queen">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
             <label>King:</label>
-            <select name="king">
+            <select id="king">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
             <label>Jester:</label>
-            <select name="jester">
+            <select id="jester">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
             <label>Regent:</label>
-            <select name="regent">
+            <select id="regent">
                 <option value=0>0</option>
                 <option value=1>1</option>
             </select><br>
@@ -141,16 +139,24 @@
 
         <div class="column">
             <h3>Difficulty:</h3>
-            <select name="difficulty">
+            <select id="difficulty">
                 <option value="Beginner">Beginner</option>
                 <option value="Intermediate">Intermediate</option>
                 <option value="Advanced">Advanced</option>
             </select>
+            <br>
+            <input type="button" id="calculateButton" value="Calculate Points">
         </div>
 
-        <br style="clear: both;"><br>
+        <div id="scoreContainer">
 
-        <input type="submit" value="Calculate Points">
-    </form>
+        </div>
+
+        <script>
+
+            
+        </script>
+
+
 </body>
 </html>

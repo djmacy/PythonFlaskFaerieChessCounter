@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return render_template('index.html')
-
+"""
 @app.route('/calculate', methods=['POST'])
 def calculate():
     total_points = int(request.form['pawn']) * 1 + \
@@ -37,6 +37,6 @@ def calculate():
     remaining_points = difficulties[selected_difficulty] - total_points
 
     return render_template('result.html', total_points=total_points, remaining_points=remaining_points)
-
+"""
 if __name__ == '__main__':
     app.run()
