@@ -10,7 +10,7 @@
 
         .column label {
             display: inline-block;
-            width: 150px;
+            width: 125px;
         }
 
         .column input,
@@ -139,11 +139,11 @@
                 <option value="Advanced">Advanced</option>
             </select>
             <br>
-            <input type="button" id="calculateButton" value="Calculate Points">
         </div>
 
         <div id="scoreContainer">
-
+            <br>Total points: 16
+            <br>Remaining Points: 49
         </div>
 
         <script>
@@ -157,7 +157,7 @@
 
                 var rank1Label = document.getElementById('rank1Label');
                 rank1Label.innerText = "Rank I Pieces Left: " + (maxRank1Pieces - totalRank1Pieces);
-
+                updateTotalPoints();
             }
 
             document.getElementById('pawn').addEventListener('change', updateRank1Pieces);
@@ -184,7 +184,7 @@
 
                 var rank2Label = document.getElementById('rank2Label');
                 rank2Label.innerText = "Rank II Pieces Left: " + (maxRank2Pieces - totalRank2Pieces);
-
+                updateTotalPoints();
             }
 
             document.getElementById('rook').addEventListener('change', updateRank2Pieces);
@@ -200,7 +200,7 @@
             document.getElementById('thief').addEventListener('change', updateRank2Pieces);
             document.getElementById('tower').addEventListener('change', updateRank2Pieces);
 
-            document.getElementById('calculateButton').addEventListener('click', function() {
+            function updateTotalPoints() {
                 var pawnValue = parseInt(document.getElementById('pawn').value);
                 var soldierValue = parseInt(document.getElementById('soldier').value);
                 var peasantValue = parseInt(document.getElementById('peasant').value);
@@ -217,7 +217,7 @@
                 var thiefValue = parseInt(document.getElementById('thief').value);
                 var towerValue = parseInt(document.getElementById('tower').value);
                 var queenValue = parseInt(document.getElementById('queen').value);
-                var kingValue = parseInt(document.getElementById('king').value);
+                var kingValue = document.getElementById('king').value;
 
                 var difficulty = document.getElementById('difficulty').value;
                 var difficulties = {
@@ -257,7 +257,11 @@
 
                 var scoreContainer = document.getElementById('scoreContainer');
                 scoreContainer.innerHTML = "<br>Total points: " + totalPoints + "<br>Remaining points: " + remainingPoints;
-            });
+
+            }
+            document.getElementById('queen').addEventListener('change', updateTotalPoints);
+            document.getElementById('king').addEventListener('change', updateTotalPoints);
+            document.getElementById('difficulty').addEventListener('change', updateTotalPoints);
         </script>
 </body>
 </html>
