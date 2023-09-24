@@ -10,7 +10,7 @@
 
         .column label {
             display: inline-block;
-            width: 100px;
+            width: 150px;
         }
 
         .column input,
@@ -117,27 +117,18 @@
 
         <div class="column">
             <h3>Rank III selection:</h3>
-            <label>Queen:</label>
+            <label>Queen or Jester:</label>
             <select id="queen">
-                <option value=0>0</option>
-                <option value=1>1</option>
+                <option value=1>Queen</option>
+                <option value=1>Jester</option>
             </select><br>
-            <label>King:</label>
+            <label>King or Regent:</label>
             <select id="king">
-                <option value=0>0</option>
-                <option value=1>1</option>
+                <option value="King">King</option>
+                <option value="Regent">Regent</option>
             </select><br>
-            <label>Jester:</label>
-            <select id="jester">
-                <option value=0>0</option>
-                <option value=1>1</option>
-            </select><br>
-            <label>Regent:</label>
-            <select id="regent">
-                <option value=0>0</option>
-                <option value=1>1</option>
-            </select><br>
-            <div id = "rank3Label">Rank III Pieces Left: 2</div>
+
+            <div id = "rank3Label">Rank III Pieces Left: 0</div>
         </div>
 
         <div class="column">
@@ -209,27 +200,6 @@
             document.getElementById('thief').addEventListener('change', updateRank2Pieces);
             document.getElementById('tower').addEventListener('change', updateRank2Pieces);
 
-            function updateRank3Pieces() {
-                var queenValue = parseInt(document.getElementById('queen').value);
-                var jesterValue = parseInt(document.getElementById('jester').value);
-                var kingValue = parseInt(document.getElementById('king').value);
-                var regentValue = parseInt(document.getElementById('regent').value);
-
-
-                var totalRank3Pieces = queenValue + jesterValue + kingValue + regentValue;
-                var maxRank3Pieces =  2;
-
-                var rank3Label = document.getElementById('rank3Label');
-                rank3Label.innerText = "Rank III Pieces Left: " + (maxRank3Pieces - totalRank3Pieces);
-
-            }
-
-            document.getElementById('queen').addEventListener('change', updateRank3Pieces);
-            document.getElementById('king').addEventListener('change', updateRank3Pieces);
-            document.getElementById('jester').addEventListener('change', updateRank3Pieces);
-            document.getElementById('regent').addEventListener('change', updateRank3Pieces);
-
-
             document.getElementById('calculateButton').addEventListener('click', function() {
                 var pawnValue = parseInt(document.getElementById('pawn').value);
                 var soldierValue = parseInt(document.getElementById('soldier').value);
@@ -247,9 +217,7 @@
                 var thiefValue = parseInt(document.getElementById('thief').value);
                 var towerValue = parseInt(document.getElementById('tower').value);
                 var queenValue = parseInt(document.getElementById('queen').value);
-                var jesterValue = parseInt(document.getElementById('jester').value);
                 var kingValue = parseInt(document.getElementById('king').value);
-                var regentValue = parseInt(document.getElementById('regent').value);
 
                 var difficulty = document.getElementById('difficulty').value;
                 var difficulties = {
@@ -257,6 +225,9 @@
                     "Intermediate": 70,
                     "Advanced": 75
                 };
+
+                var kingElement = document.getElementById('king');
+                var kingValue = kingElement.value;
 
                 var totalPoints = pawnValue * 1 +
                     peasantValue * 2 +
@@ -273,10 +244,14 @@
                     pontiffValue * 8 +
                     thiefValue * 5 +
                     towerValue * 10 +
-                    queenValue * 12 +
-                    kingValue * 0 +
-                    jesterValue * 12 +
-                    regentValue * 15;
+                    //queen and jester are worth the same since one has to be selected just add 12 everytime
+                    queenValue * 12;
+                //Test both type and value in JS
+                if (kingValue === "King") {
+                    totalPoints += 0;
+                } else if (kingValue === "Regent") {
+                    totalPoints += 15;
+                }
 
                 var remainingPoints = difficulties[difficulty] - totalPoints;
 
