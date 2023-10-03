@@ -1,0 +1,16 @@
+
+.column {
+    float: left;
+    width: 33%;
+}
+
+.column label {
+    display: inline-block;
+    width: 125px;
+}
+
+.column input,
+.column select {
+    display: inline-block;
+    width: 100px;
+}
